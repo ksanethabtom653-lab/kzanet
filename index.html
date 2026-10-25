@@ -2,60 +2,148 @@
 <html lang="sv">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NT69VS7F');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kzanet Habtom</title>
+    <title>Kzanet Habtom · Digital Marketing Specialist</title>
+    <!-- Google Fonts för lyxig redaktionell typografi och modern läsbar sans-serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div>
-            <h1>Kzanet</h1>
-            <p class="roll">Studerande Digital Marketing Specialist</p>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT69VS7F" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81CDVKQQCQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-81CDVKQQCQ');
+    </script>
+    <!-- Sidhuvud med personligt varumärke, navigation och temaväxlare -->
+    <header class="sidhuvud">
+        <div class="sidhuvud-inre">
+            <div class="varumarke">
+                <span class="varumarke-kicker" aria-hidden="true">✦ PORTFOLIO ✦</span>
+                <h1 class="logotyp">Kzanet Habtom</h1>
+                <p class="roll">Studerande Digital Marketing Specialist</p>
+            </div>
+
+            <div class="sidhuvud-kontroller">
+                <nav aria-label="Huvudmeny" class="huvudmeny">
+                    <ul>
+                        <li><a href="#om">Om mig</a></li>
+                        <li><a href="#erfarenhet">Erfarenhet</a></li>
+                        <li><a href="#projekt">Projekt</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+                <button id="tema" class="knapp-tema" type="button" aria-label="Växla mellan mörkt och ljust läge">
+                    Byt till mörkt läge
+                </button>
+            </div>
         </div>
-        <nav aria-label="Huvudmeny">
-            <ul>
-                <li><a href="#om">Om mig</a></li>
-                <li><a href="#erfarenhet">Erfarenhet</a></li>
-                <li><a href="#projekt">Projekt</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
     </header>
+
     <main>
-        <section>
-            <h2>Från butik till digital marknadsföring</h2>
-            <p> Jag kombinerar min erfarenhet från butik och kundmöten med mina nya kunskaper inom digital
-                marknadsföring.
-            </p> <a href="#kontakt">Kontakta mig</a>
+        <!-- Hero: Editorial introduktion med varm elegans -->
+        <section class="hero-sektion">
+            <div class="hero-innehall">
+                <div class="hero-stjarnor" aria-hidden="true">✦ ✦ ✦</div>
+                <h2>Från butik till digital marknadsföring</h2>
+                <p>
+                    Jag kombinerar min erfarenhet från butik och kundmöten med mina nya kunskaper inom digital
+                    marknadsföring.
+                </p>
+                <div class="hero-handling">
+                    <a href="#kontakt" class="knapp knapp-primar">Kontakta mig</a>
+                </div>
+            </div>
         </section>
-        <section id="om">
-            <h2>Om mig</h2>
-            <img src="img/profil.jpg" alt="Bild på Kzanet" width="400" height="400">
 
-            <p>
-                Jag heter Kzanet habtom och studerar till Digital Marketing Specialist.
-                Jag är intresserad av hur företag kan använda digital marknadsföring
-                för att nå rätt kunder och skapa en starkare relation med sin målgrupp.
-            </p>
+        <!-- Om mig: Editorial tvåspalt med välvd porträttbåge -->
+        <section id="om" class="sektion sektion-om">
+            <div class="sektion-rubrik-paket">
+                <span class="rubrik-dekor" aria-hidden="true">✦</span>
+                <h2>Om mig</h2>
+                <span class="rubrik-linje" aria-hidden="true"></span>
+            </div>
 
-            <p>
-                Innan jag började studera digital marknadsföring har jag arbetat i butik
-                och praktiserat på flera olika affärer. Genom mina erfarenheter har jag
-                fått en bra förståelse för kundservice, försäljning och hur viktigt det
-                är att förstå kundens behov.
-            </p>
+            <div class="om-innehall">
+                <div class="om-bild-kolumn">
+                    <div class="bild-valv-ram">
+                        <img src="img/profil.jpg" alt="Profilbild på Kzanet Habtom" width="400" height="400"
+                            class="profil-bild">
+                    </div>
+                </div>
 
-            <p>
-                Nu vill jag kombinera mina erfarenheter från butik med mina kunskaper
-                inom digital marknadsföring, sociala medier, SEO och digital kommunikation.
-            </p>
+                <div class="om-text-kolumn">
+                    <p>
+                        Jag heter Kzanet Habtom och studerar till Digital Marketing Specialist.
+                        Jag är intresserad av hur företag kan använda digital marknadsföring
+                        för att nå rätt kunder och skapa en starkare relation med sin målgrupp.
+                    </p>
+
+                    <p>
+                        Innan jag började studera digital marknadsföring har jag arbetat i butik
+                        och praktiserat på flera olika affärer. Genom mina erfarenheter har jag
+                        fått en bra förståelse för kundservice, försäljning och hur viktigt det
+                        är att förstå kundens behov.
+                    </p>
+
+                    <p>
+                        Nu vill jag kombinera mina erfarenheter från butik med mina kunskaper
+                        inom digital marknadsföring, sociala medier, SEO och digital kommunikation.
+                    </p>
+                </div>
+            </div>
         </section>
-        <section id="erfarenhet">
-            <h2>Min erfarenhet</h2>
-            <ul>
-                <li>
+
+        <!-- Min erfarenhet: Eleganta numrerade kort -->
+        <section id="erfarenhet" class="sektion sektion-erfarenhet">
+            <div class="sektion-rubrik-paket">
+                <span class="rubrik-dekor" aria-hidden="true">✦</span>
+                <h2>Min erfarenhet</h2>
+                <span class="rubrik-linje" aria-hidden="true"></span>
+            </div>
+
+            <ul class="rutnat">
+                <li class="kort erfarenhet-kort">
+                    <div class="kort-huvud">
+                        <span class="kort-siffra" aria-hidden="true">01</span>
+                        <span class="kort-accent" aria-hidden="true">✦</span>
+                    </div>
+                    <h3>Äldreomsorg</h3>
+                    <p>
+                        Jag har arbetat inom äldreomsorgen i många år,Jag har lärt mig hur viktigt det är att lyssna,
+                        visa
+                        omtanke och möta varje människa med respekt och förståelse.
+
+                <li class="kort erfarenhet-kort">
+                    <div class="kort-huvud">
+                        <span class="kort-siffra" aria-hidden="true">02</span>
+                        <span class="kort-accent" aria-hidden="true">✦</span>
+                    </div>
                     <h3>Butikserfarenhet</h3>
                     <p>
                         Erfarenhet av att arbeta i butik med kundservice, försäljning och
@@ -63,7 +151,11 @@
                     </p>
                 </li>
 
-                <li>
+                <li class="kort erfarenhet-kort">
+                    <div class="kort-huvud">
+                        <span class="kort-siffra" aria-hidden="true">03</span>
+                        <span class="kort-accent" aria-hidden="true">✦</span>
+                    </div>
                     <h3>Praktik inom handel</h3>
                     <p>
                         Jag har praktiserat på flera affärer och fått erfarenhet av den
@@ -71,7 +163,11 @@
                     </p>
                 </li>
 
-                <li>
+                <li class="kort erfarenhet-kort">
+                    <div class="kort-huvud">
+                        <span class="kort-siffra" aria-hidden="true">04</span>
+                        <span class="kort-accent" aria-hidden="true">✦</span>
+                    </div>
                     <h3>Digital marknadsföring</h3>
                     <p>
                         Genom min utbildning utvecklar jag kunskaper inom bland annat
@@ -80,60 +176,96 @@
                 </li>
             </ul>
         </section>
-        <section id="projekt">
-            <h2>Projekt</h2>
-            <article>
-                <img src="img/projekt-1.jpg" alt="Projekt inom digital marknadsföring" width="600" height="400">
 
-                <h3>Digital marknadsföring</h3>
+        <!-- Projekt: Featured work med bildpresentation i lyxig stil -->
+        <section id="projekt" class="sektion sektion-projekt">
+            <div class="sektion-rubrik-paket">
+                <span class="rubrik-dekor" aria-hidden="true">✦</span>
+                <h2>Projekt</h2>
+                <span class="rubrik-linje" aria-hidden="true"></span>
+            </div>
 
-                <p>
-                    Projekt från min utbildning där jag arbetar med digital strategi,
-                    målgrupp och kommunikation.
-                </p>
-            </article>
+            <div class="rutnat rutnat-projekt">
+                <article class="kort projekt-kort">
+                    <div class="projekt-bild-omslag">
+                        <img src="img/digital-strategi-seo.jpg"
+                            alt="Digital strategi & SEO presentation med sökresultat, målgrupp och analys" width="600"
+                            height="400">
+                    </div>
+                    <div class="projekt-detaljer">
+                        <span class="projekt-kategori" aria-hidden="true">Strategi & Tillväxt</span>
+                        <h3>Digital strategi & SEO</h3>
+                        <p>
+                            Projekt från min utbildning där jag arbetar med digital strategi,
+                            SEO-optimering, målgrupp och analys för ökad synlighet.
+                        </p>
+                    </div>
+                </article>
 
-            <article>
-                <img src="img/projekt-2.jpg" alt="Projekt med innehållsplanering för sociala medier" width="600"
-                    height="400">
+                <article class="kort projekt-kort">
+                    <div class="projekt-bild-omslag">
+                        <img src="img/content-kampanjer.jpg"
+                            alt="Content & Kampanjer presentation med laptop, contentplan och kampanjer" width="600"
+                            height="400">
+                    </div>
+                    <div class="projekt-detaljer">
+                        <span class="projekt-kategori" aria-hidden="true">Innehåll & Engagemang</span>
+                        <h3>Content & Kampanjer</h3>
+                        <p>
+                            Projekt där jag arbetar med idé & strategi, målgrupp och innehållsplanering
+                            för sociala medier och digitala kampanjer.
+                        </p>
+                    </div>
+                </article>
 
-                <h3>Sociala medier</h3>
-
-                <p>
-                    Projekt där jag arbetar med innehåll, målgrupp och planering
-                    för sociala medier.
-                </p>
-            </article>
-
-            <article>
-                <img src="img/projekt-3.jpg" alt="Kzanets portfolio-webbplats" width="600" height="400">
-
-                <h3>Min portfolio</h3>
-
-                <p>
-                    Min personliga webbplats där jag presenterar min erfarenhet,
-                    mina projekt och min utveckling inom digital marknadsföring.
-                </p>
-            </article>
+                <article class="kort projekt-kort">
+                    <div class="projekt-bild-omslag">
+                        <img src="img/webbdesign-portfolio.jpg"
+                            alt="Webbdesign & Portfolio presentation med laptop, mobil och skisser" width="600"
+                            height="400">
+                    </div>
+                    <div class="projekt-detaljer">
+                        <span class="projekt-kategori" aria-hidden="true">Webb & Varumärke</span>
+                        <h3>Webbdesign & Portfolio</h3>
+                        <p>
+                            Min personliga webbplats där jag presenterar min erfarenhet,
+                            mina projekt och min utveckling inom digital marknadsföring.
+                        </p>
+                    </div>
+                </article>
+            </div>
         </section>
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>
-                Vill du komma i kontakt med mig? Hör gärna av dig.
-            </p>
 
-            <p>
-                <a href="kzahab04@ihmeducation.se "></a>
-            </p>
+        <!-- Kontakt: Exklusiv editorial kontaktbanner -->
+        <section id="kontakt" class="sektion sektion-kontakt">
+            <div class="kontakt-banner">
+                <div class="kontakt-innehall">
+                    <span class="kontakt-kicker" aria-hidden="true">✦ LET'S CONNECT ✦</span>
+                    <h2>Kontakt</h2>
+                    <p class="kontakt-ingress">
+                        Vill du komma i kontakt med mig? Hör gärna av dig.
+                    </p>
 
-            <p>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
-                    Kzanet på LinkedIn
-                </a>
-            </p>
+                    <div class="kontakt-lank-grupp">
+                        <p class="kontakt-rad">
+                            <span class="kontakt-etikett">E-post</span>
+                            <a href="mailto:kzahab044@ihmeducation.se"
+                                class="kontakt-lank">kzahab044@ihmeducation.se</a>
+                        </p>
+
+                        <p class="kontakt-rad">
+                            <span class="kontakt-etikett">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/ksanet-habtom-a754583b8/?isSelfProfile=true"
+                                target="_blank" rel="noopener" class="kontakt-lank">Ksanet Habtom</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
+
+    <!-- Sidfot -->
+    <footer class="sidfot">
         <p>© 2026 Kzanet · Digital Marketing Specialist</p>
     </footer>
 </body>
