@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Toggle (Dark / Light mode)
     const themeToggleBtn = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    
+
     if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
     }
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
+
             if (newTheme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'light');
             } else {
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const senderName = document.getElementById('sender-name')?.value;
-            
+
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.textContent = '⏳ Skickar...';
@@ -141,3 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+const temaknapp = document.querySelector("#tema");
+if (temaknapp) {
+    temaknapp.hidden = false;
+
+    // Kom ihåg tidigare valt tema från localStorage
+    if (localStorage.getItem("tema") === "morkt") {
+        document.body.classList.add("morkt");
+        temaknapp.textContent = "Byt till ljust läge";
+    }
+
+    function bytTema() {
+        document.body.classList.toggle("morkt");
+        const arMorkt = document.body.classList.contains("morkt");
+        temaknapp.textContent = arMorkt ? "Byt till ljust läge" : "Byt till mörkt läge";
+        localStorage.setItem("tema", arMorkt ? "morkt" : "ljust");
+    }
+
+    temaknapp.addEventListener("click", bytTema);
+}
