@@ -1,0 +1,654 @@
+/* ==========================================================================
+   Kzanet Habtom - Portfolio & Personal Brand
+   Tema: Modern Editorial Luxury (Inspirerad av champagne, burgundy & varm beige)
+   ========================================================================== */
+
+/* 1 · Reset & Box-modell */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2 · Designsystem & Färgvariabler (Ljust läge: Varm elfenben, burgundy & sandguld) */
+:root {
+  /* Färgpalett - Grund */
+  --yta: #fcf9f5;
+  --yta-2: #f4eee5;
+  --yta-kort: #ffffff;
+  --kant: #e7decb;
+  --kant-subtil: #f0e9dc;
+
+  /* Typografi & Kontrast */
+  --text: #23181a;
+  --text-dampad: #5e5254;
+  --text-ljus: #ffffff;
+
+  /* Accenter & Signaturfärger (Burgundy & Sandguld) */
+  --burgundy: #3f141b;
+  --burgundy-mork: #2c0b11;
+  --burgundy-ljus: #591d27;
+  --accent-guld: #c69c6d;
+  --accent-guld-ljus: #e4c8a8;
+  --accent-soft: rgba(198, 156, 109, 0.15);
+
+  /* Kontaktbanner yta */
+  --banner-bg: #3f141b;
+  --banner-text: #fbf8f3;
+  --banner-kant: rgba(198, 156, 109, 0.35);
+
+  /* Typsnitt */
+  --typsnitt-rubrik: "Playfair Display", Georgia, "Times New Roman", serif;
+  --typsnitt-brodtext: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  /* Mått & Radier */
+  --max-bredd: 72rem;
+  --luft-enhet: 1rem;
+  --radie-s: 8px;
+  --radie-m: 16px;
+  --radie-l: 24px;
+  --radie-valv: 180px 180px 16px 16px;
+  --radie-piller: 9999px;
+
+  /* Skuggor */
+  --skugga-mjuk: 0 4px 20px rgba(35, 24, 26, 0.05);
+  --skugga-svavande: 0 12px 32px rgba(35, 24, 26, 0.08);
+
+  /* Övergångar */
+  --overgang-snabb: 0.2s ease;
+  --overgang-mjuk: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3 · Mörkt läge (Stilrent espresso/noir med varma creme- & guldaccenter) */
+body.morkt {
+  --yta: #130f11;
+  --yta-2: #1b1518;
+  --yta-kort: #221a1d;
+  --kant: #382a2f;
+  --kant-subtil: #2a1f23;
+
+  --text: #f5eee6;
+  --text-dampad: #b8aaa7;
+  --text-ljus: #ffffff;
+
+  --burgundy: #dfb696;
+  --burgundy-mork: #f0cfb3;
+  --burgundy-ljus: #c69c6d;
+  --accent-guld: #dfb696;
+  --accent-guld-ljus: #f0d5be;
+  --accent-soft: rgba(223, 182, 150, 0.12);
+
+  --banner-bg: #1f1417;
+  --banner-text: #f5eee6;
+  --banner-kant: rgba(223, 182, 150, 0.25);
+
+  --skugga-mjuk: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --skugga-svavande: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* 4 · Grundtypografi & Struktur */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--typsnitt-brodtext);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--yta);
+  transition: background-color var(--overgang-mjuk), color var(--overgang-mjuk);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--typsnitt-rubrik);
+  font-weight: 600;
+  color: var(--burgundy);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--text-dampad);
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--overgang-snabb), border-color var(--overgang-snabb);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5 · Tangentbordsfokus & Tillgänglighet */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-guld);
+  outline-offset: 4px;
+  border-radius: var(--radie-s);
+}
+
+/* 6 · Sidhuvud & Navigation */
+.sidhuvud {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--yta);
+  border-bottom: 1px solid var(--kant);
+  backdrop-filter: blur(8px);
+  transition: background-color var(--overgang-mjuk), border-color var(--overgang-mjuk);
+}
+
+.sidhuvud-inre {
+  max-width: var(--max-bredd);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.varumarke-kicker {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--accent-guld);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.logotyp {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--burgundy);
+}
+
+.roll {
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dampad);
+  margin: 0.15rem 0 0 0;
+}
+
+.sidhuvud-kontroller {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.huvudmeny ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+}
+
+.huvudmeny a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.huvudmeny a::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--accent-guld);
+  transition: width var(--overgang-snabb);
+}
+
+.huvudmeny a:hover::after {
+  width: 100%;
+}
+
+.huvudmeny a:hover {
+  color: var(--burgundy);
+}
+
+/* Temaknapp (Ljust / Mörkt läge) */
+.knapp-tema {
+  font-family: var(--typsnitt-brodtext);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.55rem 1.15rem;
+  min-height: 40px;
+  border-radius: var(--radie-piller);
+  background-color: var(--yta-2);
+  color: var(--text);
+  border: 1px solid var(--kant);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--overgang-snabb);
+}
+
+.knapp-tema:hover {
+  background-color: var(--yta-kort);
+  border-color: var(--accent-guld);
+  color: var(--burgundy);
+  transform: translateY(-1px);
+}
+
+/* 7 · Huvudinnehåll & Layout */
+main {
+  max-width: var(--max-bredd);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sektion {
+  padding: 5rem 0;
+}
+
+/* Sektionsrubriker med redaktionell stjärna & linje */
+.sektion-rubrik-paket {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.rubrik-dekor {
+  color: var(--accent-guld);
+  font-size: 1.125rem;
+}
+
+.sektion-rubrik-paket h2 {
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.rubrik-linje {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--kant), transparent);
+}
+
+/* 8 · Hero Sektion */
+.hero-sektion {
+  padding: 5.5rem 0 4.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-innehall {
+  max-width: 52rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-stjarnor {
+  font-size: 0.875rem;
+  letter-spacing: 0.4em;
+  color: var(--accent-guld);
+  margin-bottom: 1.25rem;
+}
+
+.hero-sektion h2 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1.18;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-sektion p {
+  font-size: clamp(1.125rem, 2vw, 1.3125rem);
+  line-height: 1.7;
+  max-width: 42rem;
+  margin-bottom: 2.25rem;
+}
+
+/* Knappar */
+.knapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 2.25rem;
+  font-family: var(--typsnitt-brodtext);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radie-piller);
+  transition: all var(--overgang-snabb);
+}
+
+.knapp-primar {
+  background-color: var(--burgundy);
+  color: var(--text-ljus);
+  box-shadow: 0 4px 16px rgba(63, 20, 27, 0.2);
+}
+
+body.morkt .knapp-primar {
+  background-color: var(--accent-guld);
+  color: #1a1215;
+  box-shadow: 0 4px 16px rgba(223, 182, 150, 0.25);
+}
+
+.knapp-primar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(63, 20, 27, 0.3);
+  filter: brightness(1.1);
+}
+
+/* 9 · Om mig (Redaktionell layout med välvd porträttbåge) */
+.om-innehall {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.om-bild-kolumn {
+  display: flex;
+  justify-content: center;
+}
+
+.bild-valv-ram {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--skugga-svavande);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--overgang-normal), box-shadow var(--overgang-normal);
+}
+
+.bild-valv-ram:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
+}
+
+.profil-bild {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+  border: none;
+  display: block;
+}
+
+
+.om-text-kolumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.om-text-kolumn p {
+  font-size: 1.125rem;
+}
+
+/* 10 · Erfarenhet & Rutnät */
+.rutnat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.kort {
+  background-color: var(--yta-kort);
+  border: 1px solid var(--kant);
+  border-radius: var(--radie-m);
+  padding: 2rem;
+  box-shadow: var(--skugga-mjuk);
+  transition: transform var(--overgang-snabb), box-shadow var(--overgang-snabb), border-color var(--overgang-snabb);
+}
+
+.kort:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--skugga-svavande);
+  border-color: var(--accent-guld);
+}
+
+.erfarenhet-kort .kort-huvud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--kant-subtil);
+}
+
+.kort-siffra {
+  font-family: var(--typsnitt-rubrik);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--accent-guld);
+}
+
+.kort-accent {
+  color: var(--accent-guld);
+  font-size: 0.875rem;
+}
+
+.erfarenhet-kort h3 {
+  font-size: 1.375rem;
+  margin-bottom: 0.75rem;
+}
+
+/* 11 · Projekt (Featured Work) */
+.rutnat-projekt {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.projekt-kort {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.projekt-bild-omslag {
+  position: relative;
+  background-color: var(--yta-2);
+  overflow: hidden;
+  border-bottom: 1px solid var(--kant);
+}
+
+.projekt-bild-omslag img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.projekt-kort:hover .projekt-bild-omslag img {
+  transform: scale(1.04);
+}
+
+.projekt-detaljer {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.projekt-kategori {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-guld);
+  margin-bottom: 0.5rem;
+}
+
+.projekt-detaljer h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.projekt-detaljer p {
+  font-size: 0.985rem;
+}
+
+/* 12 · Kontaktsektion (Lyxig redaktionell banner) */
+.sektion-kontakt {
+  padding: 3rem 0 6rem;
+}
+
+.kontakt-banner {
+  background-color: var(--banner-bg);
+  color: var(--banner-text);
+  border: 1px solid var(--banner-kant);
+  border-radius: var(--radie-l);
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+  box-shadow: var(--skugga-svavande);
+  position: relative;
+  overflow: hidden;
+}
+
+.kontakt-banner::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.kontakt-innehall {
+  max-width: 38rem;
+}
+
+.kontakt-kicker {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--accent-guld);
+  margin-bottom: 0.75rem;
+}
+
+.kontakt-banner h2 {
+  color: var(--banner-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.kontakt-ingress {
+  color: rgba(251, 248, 243, 0.85);
+  font-size: 1.125rem;
+  margin-bottom: 2.25rem;
+}
+
+.kontakt-lank-grupp {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.kontakt-rad {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 1.5rem;
+}
+
+.kontakt-etikett {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-guld);
+  min-width: 90px;
+}
+
+.kontakt-lank {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--banner-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--accent-guld);
+  padding-bottom: 2px;
+}
+
+.kontakt-lank:hover {
+  color: var(--accent-guld-ljus);
+  border-color: var(--accent-guld-ljus);
+}
+
+/* 13 · Sidfot */
+.sidfot {
+  border-top: 1px solid var(--kant);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background-color: var(--yta-2);
+}
+
+.sidfot p {
+  font-size: 0.875rem;
+  color: var(--text-dampad);
+  letter-spacing: 0.04em;
+}
+
+/* 14 · Responsiv design för större skärmar */
+@media (min-width: 52rem) {
+  .sidhuvud-inre {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+  }
+
+  .sidhuvud-kontroller {
+    gap: 2rem;
+  }
+
+  .om-innehall {
+    grid-template-columns: 380px 1fr;
+    gap: 4rem;
+  }
+
+  .om-bild-kolumn {
+    justify-content: flex-start;
+  }
+}
